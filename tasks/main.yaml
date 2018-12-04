@@ -1,0 +1,23 @@
+---
+- include_tasks: 10-bash.yaml
+  when: set_bash
+- include_tasks: 11-time.yaml
+  when: set_timezone
+- include_tasks: 12-limits.yaml
+  when: set_limits
+- include_tasks: 13-files.yaml
+  when: set_files
+- include_tasks: 14-sudo.yaml
+  when: set_sudo
+
+- include_tasks: 20-hosts_hostname.yaml
+  when: set_hosts
+- include_tasks: 21-selinux.yaml
+  when: disable-selinux
+- include_tasks: 22-networkmanager.yaml
+  when: disable-networkmanager
+
+- include_tasks: 30-yum.yaml
+  when: yum_install_common_package
+
+# vim: sw=2 ft=ansible

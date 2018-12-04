@@ -1,0 +1,19 @@
+---
+- name: remove Defaults requiretty from sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    state: absent
+    regexp: "Defaults *requiretty"
+
+- name: permission for tmp dir
+  file:
+    path: "/tmp"
+    state: directory
+    mode: 0777
+
+- name: ensure rc.local executable
+  file:
+    path: "/etc/rc.d/rc.local"
+    mode: 0755
+
+# vim: sw=2 ft=ansible

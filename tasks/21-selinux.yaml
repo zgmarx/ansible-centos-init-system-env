@@ -1,0 +1,12 @@
+---
+- name: disable selinux
+  lineinfile:
+    dest: /etc/selinux/config
+    regexp: "^SELINUX="
+    line: "SELINUX=disabled"
+
+- name: disable selinux set setenforce to 0
+  command: "setenforce 0"
+  ignore_errors: yes
+
+# vim: sw=2 ft=ansible

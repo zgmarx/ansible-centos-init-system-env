@@ -1,0 +1,59 @@
+---
+- name: install tool packages
+  yum:
+    state: present
+    name:
+      - bash
+      - bash-completion
+      - bc
+      - bind-utils
+      - net-tools
+      - cronie
+      - dmidecode
+      - fping
+      - gdb
+      - htop
+      - iotop
+      - iptraf
+      - jq
+      - lrzsz
+      - lshw
+      - lsof
+      - lsscsi
+      - mtr
+      - nc
+      - nscd
+      - ntp
+      - numactl
+      - pciutils
+      - rsync
+      - smartmontools
+      - sudo
+      - sysstat
+      - tcpdump
+      - tcping
+      - telnet
+      - traceroute
+      - vim-common
+      - vim-enhanced
+      - vim-minimal
+      - wget
+      - xfsprogs
+      - nethogs
+      - tcl
+      - expat
+      - ipmitool
+      - OpenIPMI
+      - strace
+      - dstat
+      - python-pip
+      - python-devel
+      - openssl-devel
+      - gcc-c++
+      - gcc
+      - lldpad
+      - gnuplot
+      - screen
+      - tmux
+
+# vim: sw=2 ft=ansible

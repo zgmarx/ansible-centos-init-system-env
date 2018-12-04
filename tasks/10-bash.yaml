@@ -1,0 +1,18 @@
+---
+- name: ensure shbookmark file
+  copy:
+    dest: /usr/local/bin/shbookmark.sh
+    src: shbookmark.sh
+    mode: 0755
+
+- name: ensure ('.bashrc', '.gitconfig', '.screenrc') present
+  copy:
+    dest: "/root/.{{ item }}"
+    src: "{{ item }}"
+    mode: 644
+  with_items:
+    - bashrc
+    - gitconfig
+    - screenrc
+
+# vim: sw=2 ft=ansible

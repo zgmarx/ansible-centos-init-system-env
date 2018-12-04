@@ -1,0 +1,14 @@
+---
+- name: set timezone to "{{ timezone }}"
+  timezone:
+    name: "{{ timezone }}"
+  notify: restart crond
+
+- name: setting system time to hardware clock
+  cron:
+    name: "sets the system time to hardware clock"
+    minute: "30"
+    hour: "*"
+    job: "/sbin/hwclock --systohc > /dev/null"
+
+# vim: sw=2 ft=ansible
